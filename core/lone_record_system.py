@@ -1,112 +1,71 @@
 import os
 import requests
-from urllib.parse import urljoin, urlparse
-from bs4 import BeautifulSoup
 from ddgs import DDGS
 
-# ==============================
-# CONFIG
-# ==============================
+BASE_PATH = "/ai_system/data/RecordRoom"
 
-BASE_DIR = "/ai_system/data/RecordRoom"
-
-CATEGORIES = {
-    "Land": "Karnataka Land Revenue Act PDF",
-    "Bhoomi": "Bhoomi RTC Karnataka PDF",
-    "Survey": "Mojini survey Karnataka PDF",
-    "Registration": "Kaveri registration Karnataka PDF",
-    "Panchayat": "Panchayat Raj Act Karnataka PDF",
-    "ESwathu": "E Swathu Karnataka PDF",
-    "BDA": "BDA rules Bangalore PDF",
-    "KIADB": "KIADB land allotment PDF",
-    "EAasthi": "E Aasthi Karnataka PDF",
-    "Municipal": "Municipal property rules Karnataka PDF"
+KEYWORDS = {
+    "LandRevenue": "Karnataka Land Revenue Act 1964 PDF site:karnataka.gov.in",
+    "Survey": "Mojini Karnataka survey rules PDF site:karnataka.gov.in",
+    "Registration": "Kaveri registration rules Karnataka PDF site:karnataka.gov.in",
+    "Panchayat": "E Swathu Panchayat Raj Karnataka Act PDF site:karnataka.gov.in",
+    "BDA": "Bangalore Development Authority Act rules PDF site:karnataka.gov.in",
+    "KIADB": "KIADB land allotment rules Karnataka PDF site:karnataka.gov.in",
+    "Municipal": "Karnataka Municipal Act property tax rules PDF site:karnataka.gov.in"
 }
 
-ALLOWED_DOMAINS = [
-    "karnataka.gov.in",
-    "bbmp.gov.in",
-    "landrecords.karnataka.gov.in",
-    "bhoomojini.karnataka.gov.in",
-    "kaveri.karnataka.gov.in",
-    "bda.karnataka.gov.in",
-    "panchayatraj.karnataka.gov.in",
-    "kiadb.in"
+BLOCK_WORDS = [
+    "textile", "garment", "solar", "wildlife", "energy",
+    "audit", "budget", "policy", "scheme", "tender"
 ]
 
-HEADERS = {"User-Agent": "Mozilla/5.0"}
+def is_valid(url):
+    url_lower = url.lower()
 
-# ==============================
-# FUNCTIONS
-# ==============================
+    if not url_lower.endswith(".pdf"):
+        return False
 
-def is_allowed(url):
-    domain = urlparse(url).netloc.lower()
-    return any(d in domain for d in ALLOWED_DOMAINS)
+    if "karnataka" not in url_lower:
+        return False
 
+    if ".gov.in" not in url_lower:
+        return False
 
-def save_pdf(url, category):
+    for word in BLOCK_WORDS:
+        if word in url_lower:
+            return False
+
+    return True
+
+def download_pdf(url, folder):
     try:
-        os.makedirs(f"{BASE_DIR}/{category}", exist_ok=True)
-
         filename = url.split("/")[-1]
-        filepath = f"{BASE_DIR}/{category}/{filename}"
+        path = os.path.join(BASE_PATH, folder, filename)
 
-        if os.path.exists(filepath):
+        if os.path.exists(path):
             return
 
-        r = requests.get(url, headers=HEADERS, timeout=10, verify=False)
+        response = requests.get(url, timeout=15, verify=False)
+        with open(path, "wb") as f:
+            f.write(response.content)
 
-        if r.status_code == 200:
-            with open(filepath, "wb") as f:
-                f.write(r.content)
-            print(f"✅ {category}: {filename}")
-
-    except Exception as e:
-        print(f"❌ Error: {url}")
-
-
-def scan_page(url, category):
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=10, verify=False)
-        soup = BeautifulSoup(r.text, "lxml")
-
-        for link in soup.find_all("a", href=True):
-            href = link["href"]
-            full_url = urljoin(url, href)
-
-            if full_url.endswith(".pdf") and is_allowed(full_url):
-                save_pdf(full_url, category)
+        print(f"✅ {folder}: {filename}")
 
     except:
-        pass
+        print(f"❌ Skipped: {url}")
 
+def run():
+    for folder, query in KEYWORDS.items():
+        print(f"\n🔍 {query}")
 
-def search_and_download(query, category):
-    print(f"\n🔍 {query}")
+        with DDGS() as ddgs:
+            results = ddgs.text(query, max_results=15)
 
-    with DDGS() as ddgs:
-        results = ddgs.text(query + " filetype:pdf site:karnataka.gov.in", max_results=10)
+            for r in results:
+                url = r.get("href", "")
 
-        for r in results:
-            url = r["href"]
-
-            if is_allowed(url):
-                if url.endswith(".pdf"):
-                    save_pdf(url, category)
-                else:
-                    print(f"🌐 {url}")
-                    scan_page(url, category)
-
-
-# ==============================
-# MAIN
-# ==============================
-
-def main():
-    for category, query in CATEGORIES.items():
-        search_and_download(query, category)
-
+                if is_valid(url):
+                    download_pdf(url, folder)
 
 if __name__ == "__main__":
-    main()
+    run()

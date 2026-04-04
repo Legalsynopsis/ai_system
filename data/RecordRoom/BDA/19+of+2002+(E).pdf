@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ಸಂಸದೀಯ ವ್ಯವಹಾರಗಳು ಮತ್ತು ಶಾಸನ ರಚನೆ ಇಲಾಖೆ - Storage</title>
+
+    <!-- CSS and Fonts -->
+    <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/rti_datatables/dataTables.jqueryui.min.css">
+    <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/itbt/bootstrap.css">
+	   <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/itbt/knfont.css">
+    <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/itbt/owl_custom.css">
+   <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/itbt/style.css?1775299365=">
+<link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/itbt/responsive.css?1775299365=">
+    <link rel="stylesheet" href="https://dpal.karnataka.gov.in/assets/front/itbt/navbar.css">
+
+  <link rel="stylesheet" type="text/css" href="https://dpal.karnataka.gov.in/assets/front/owl/owl.carousel.min.css">
+    <link href="assets/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/png" sizes="42x42" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+  <link rel="stylesheet" type="text/css" href="https://dpal.karnataka.gov.in/assets/front/tabswipe/css/swipe.css">
+  <link rel="stylesheet" type="text/css" href="https://dpal.karnataka.gov.in/assets/front/tabswipe/css/swipe_bundle.css">
+  <link rel="stylesheet" type="text/css" href="https://dpal.karnataka.gov.in/assets/front/tabswipe/css/tabswipe_style.css?1775299365=">
+    <!-- Custom CSS -->
+ <style>
+    .owl-policy-res-down .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    display: flex;
+}        :root {
+            --primary2-color: #b33771;
+            --secondary2-color: #82589f;
+
+              --primary-color: linear-gradient(90deg, var(--primary2-color) 9%, var(--secondary2-color) 120%);
+        }
+    
+  
+</style>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://dpal.karnataka.gov.in/assets/front/rti_datatables/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="https://dpal.karnataka.gov.in/assets/front/js/jquery_min.js"></script>
+    <script type="text/javascript" src="https://dpal.karnataka.gov.in/assets/front/itbt/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="https://dpal.karnataka.gov.in/assets/front/js/custom.js"></script>
+
+    <!-- Base URL and Language Variables -->
+    <script type="text/javascript">
+        var base_url = "https://dpal.karnataka.gov.in/";
+        var lang_name = "kn";
+    </script>
+
+</head>
+
+<body class="dark-mode-area"  translate="no">
+<div id="main">
+    <div class="top-header">
+        <div class="topHeaderInner">
+
+            <div class="topHeadingLinks">
+
+                <a href="https://dpal.karnataka.gov.in/back/index" target="blank" class="login-btn">
+                    <div class="topHeadingLinkSingle">
+                        <div class="topHeadingLinkIcon">
+                            <img src="https://dpal.karnataka.gov.in/assets/front/itbt/images/header-profile.png" class="topHeadingLinkIco" alt="login">
+                        </div>
+                        <div class="topHeadingLinkLable">
+                            <p class="topHeadingLinkLableTxt">login</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://dpal.karnataka.gov.in/storage/pdf-files/ao2002/19%20of%202002%20%28E%29.pdfen" class="no-dec login-button">
+                    <div class="topHeadingLinkSingle">
+                    
+                        <div class="topHeadingLinkLable">
+                            <p class="topHeadingLinkLableTxt">English </p>
+                        </div>
+                    </div>
+                </a>
+
+                  <a  data-bs-toggle="modal" data-bs-target="#screen_reader_kn" ><div class="topHeadingLinkSingle visually-challenged">
+                    <div class="topHeadingLinkIcon">
+                        <img src="https://dpal.karnataka.gov.in/assets/front/itbt/images/visually-challenged.png" class="topHeadingLinkIco" alt="visually challenged">
+                    </div>
+                    <div class="topHeadingLinkLable">
+                        <p class="topHeadingLinkLableTxt">visually challenged</p>
+                    </div>
+                </div></a>
+
+            </div>
+
+
+            <div class="subHeaderActions">
+
+
+       
+
+
+
+
+
+    
+<form id="searchForm" method="GET" class="">
+  <div class="search-box" id="searchBox">
+    <input type="text" name="search" id="searchInput" class="search-txt" placeholder="Search...">
+    <button type="submit" class="search-btn" id="searchBtn">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+
+<script>
+  const searchBox = document.getElementById('searchBox');
+  const searchBtn = document.getElementById('searchBtn');
+  const searchInput = document.getElementById('searchInput');
+  const searchForm = document.getElementById('searchForm');
+
+  searchBtn.addEventListener('click', function (e) {
+    // If not active, activate it and focus
+    if (!searchBox.classList.contains('active')) {
+      e.preventDefault(); // Stop submit
+      searchBox.classList.add('active');
+      searchInput.focus();
+    } else if (searchInput.value.trim() === '') {
+      e.preventDefault(); // Don't submit if empty
+      searchInput.focus();
+    }
+    // Else allow normal form submission
+  });
+
+  // Custom form submission logic
+  searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const value = searchInput.value.trim();
+    if (value !== '') {
+      window.location.href = 'https://dpal.karnataka.gov.in/search/' + encodeURIComponent(value)+"/kn";
+    }
+  });
+
+  // Close search box on click outside
+  document.addEventListener('click', function (e) {
+    if (!searchBox.contains(e.target)) {
+      searchBox.classList.remove('active');
+    }
+  });
+</script>
+                <div class="subHeaderSwitchTheme">
+
+             
+<input type="checkbox" id="toggle">
+<label for="toggle">
+    <i class="fa-solid fa-sun sun"></i>
+    <i class="fa-solid fa-moon moon"></i>
+</label>
+<div class="background"></div>
+                </div>
+              <div class="subHeaderFontSize">
+        <div class="subHeaderFontSizeAction rightBorder" id="fontDecrease">
+            <i class="fa fa-minus subHeaderFontSizeActionIco"></i>
+        </div>
+        <div class="subHeaderFontSizeLable">
+            <p class="subHeaderFontSizeLableTxt">a</p>
+        </div>
+        <div class="subHeaderFontSizeAction leftBorder" id="fontIncrease">
+            <i class="fa fa-plus subHeaderFontSizeActionIco"></i>
+        </div>
+        <div class="subHeaderFontSizeAction" id="fontReset">
+            <i class="fa fa-refresh subHeaderFontSizeActionIco"></i>
+        </div>
+    </div>
+            </div>
+
+        </div>
+    </div>
+
+
+	
+	
+	
+	 <section class="header">
+       <div class="row dflex1 cmap_container ">
+		
+		  <div class="col-md-3 col-6 col-lg-3 flex-left leftHeadSec order1">
+ <img src="https://planning.karnataka.gov.in/frontend/opt1/images/cm_logo/chief_minister_of_karrnataka_kn.png?1775299365" alt="ಸಂಸದೀಯ ವ್ಯವಹಾರಗಳು ಮತ್ತು ಶಾಸನ ರಚನೆ ಇಲಾಖೆ" class="cm_karnataka_photo">
+  </div>
+  
+<div class="col-md-6 col-12 col-lg-6 flex-mid dflex midHeadSec">
+  <div class="dflex web_logo_set ">
+      <img src="https://dpal.karnataka.gov.in/uploads/dept_logo1743052727.png" class="headerLogoImg" alt="ಸಂಸದೀಯ ವ್ಯವಹಾರಗಳು ಮತ್ತು ಶಾಸನ ರಚನೆ ಇಲಾಖೆ">
+      <div class="dept_text_contaoiners">
+        <p class="web_name">ಸಂಸದೀಯ ವ್ಯವಹಾರಗಳು ಮತ್ತು ಶಾಸನ ರಚನೆ ಇಲಾಖೆ</p>
+        <p class="web_subtitle">ಕರ್ನಾಟಕ ಸರ್ಕಾರ</p>
+		    <p class="web_subtitle"></p>
+      </div>
+
+     
+    </div>
+	  
+</div>
+
+
+                          
+
+
+<div class="col-md-3 col-6 col-lg-3 flex-right rightHeadSec order3">
+
+
+               
+     
+				 
+           
+  
+
+  </div>
+
+         
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg shadow navbar-sec">
+        <div class="container">
+            <button class="navbar-toggler collapsed"  onclick="openNav()">
+                     <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="opennav"><i class="fa fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-content">
+                <ul class='navbar-nav mr-auto mb-2 mb-lg-0 menu deskmenu'><li class='nav-item level_0'><a class='nav-link' href='https://dpal.karnataka.gov.in/kn'><i class='fa fa-home fs-35'></i></a></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='#.' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i>  ಫೋಟೋ ಗ್ಯಾಲರಿ</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='#.'><i class=''></i>  ಫೋಟೋ ಗ್ಯಾಲರಿ</a></li></ul></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='https://dpal.karnataka.gov.in/2/contact/kn' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i> ಸಂಪರ್ಕಿಸಿ</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/3/department%E2%80%99s-secretariat/kn'><i class=''></i> ಇಲಾಖೆಯ ಸಚಿವಾಲಯ</a></li></ul></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='#.' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i> ಆರ್ಟಿಐ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/rtistats/en'><i class=''></i> ಆರ್ ಟಿ ಐ ಲಾಗಿನ್</a></li><li class='nav-item  level_1'><a class='nav-link' href='https://ceg.karnataka.gov.in/assets/front/pdf/rti%20manual/RTI%20Manual__KANNADA.pdf'><i class=''></i> ಆರ್ ಟಿ ಐ ಕೈಪಿಡಿ</a></li><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/rtistats/kn'><i class=''></i> ಆರ್ ಟಿಐ ಅಂಕಿಅಂಶಗಳು</a></li></ul></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='https://dpal.karnataka.gov.in/5/rti/kn' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/168/%E0%B2%AE%E0%B2%BE%E0%B2%B9%E0%B2%BF%E0%B2%A4%E0%B2%BF-%E0%B2%B9%E0%B2%95%E0%B3%8D%E0%B2%95%E0%B3%81-%E0%B2%B5%E0%B2%BE%E0%B2%B0%E0%B3%8D%E0%B2%B7%E0%B2%BF%E0%B2%95-%E0%B2%B5%E0%B2%B0%E0%B2%A6%E0%B2%BF-2024-25/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು ವಾರ್ಷಿಕ ವರದಿ</a></li><li class='nav-item  level_0'><a class='nav-link' href='https://rtionline.karnataka.gov.in/index.php?lan=M'><i class=''></i> ಆನ್‌ಲೈನ್‌ ಮಾಹಿತಿ ಹಕ್ಕು</a></li><li class='nav-item  level_0'><a class='nav-link' href='https://dpal.karnataka.gov.in/6/rti-4%281%29%28a%29/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು 4(1)(ಎ)</a></li><li class='nav-item  level_0'><a class='nav-link' href='https://dpal.karnataka.gov.in/7/rti-4%281%29%28b%29/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು 4(1)(ಬಿ)</a></li><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/8/rti-act-2005/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು ಅಧಿನಿಯಮ 2005</a></li><li class='nav-item  level_0'><a class='nav-link' href='http://dpal.karnataka.gov.in/storage/pdf-files/RTI 26 (3) (b).pdf'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು ಅಧಿನಿಯಮ 26 (3)(ಬಿ)</a></li></ul></li></ul> 
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="opennav"><i class="fa fa-bars"></i></span>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+<style>
+#searchForm{display: flex;}
+.opennav .fa-bars{background: #0000004d;
+    padding: 11px 12px;
+    vertical-align: sub;
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    border-radius: 100px;
+    font-size: 20px;
+    height: 40px;}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #001937;
+  overflow-x: hidden;
+  transition: 0.2s;
+  padding-top: 50px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 3px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.2s !important;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+    line-height: 1;
+    padding: 12px 14px 1px 14px;
+    /* margin-left: 50px; */
+    background: #0ad2d87a;
+    /* border-radius: 50px; */
+    text-align: center;
+    /* margin: auto; */
+    display: table;
+    /* width: 20px; */
+    /* height: 22px; */
+    color: aliceblue;
+}
+
+#main {
+  transition: margin-left .2s;
+
+}
+ .opennav{
+    font-size: 30px;
+    cursor: pointer;
+
+    display: flex ;
+   }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  display: none;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+    .sidenav a {
+        font-size: 16px !important;
+        line-height: initial !important;
+    }
+  
+}
+</style>
+
+
+<div id="vardha" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div id="accordian" class="scms-acc">
+      <ul class='navbar-nav mr-auto mb-2 mb-lg-0 menu extramenudesk'><li class='nav-item level_0'><a class='nav-link' href='https://dpal.karnataka.gov.in/kn'><i class='fa fa-home fs-35'></i></a></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='#.' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i>  ಫೋಟೋ ಗ್ಯಾಲರಿ</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='#.'><i class=''></i>  ಫೋಟೋ ಗ್ಯಾಲರಿ</a></li></ul></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='https://dpal.karnataka.gov.in/2/contact/kn' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i> ಸಂಪರ್ಕಿಸಿ</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/3/department%E2%80%99s-secretariat/kn'><i class=''></i> ಇಲಾಖೆಯ ಸಚಿವಾಲಯ</a></li></ul></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='#.' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i> ಆರ್ಟಿಐ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/rtistats/en'><i class=''></i> ಆರ್ ಟಿ ಐ ಲಾಗಿನ್</a></li><li class='nav-item  level_1'><a class='nav-link' href='https://ceg.karnataka.gov.in/assets/front/pdf/rti%20manual/RTI%20Manual__KANNADA.pdf'><i class=''></i> ಆರ್ ಟಿ ಐ ಕೈಪಿಡಿ</a></li><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/rtistats/kn'><i class=''></i> ಆರ್ ಟಿಐ ಅಂಕಿಅಂಶಗಳು</a></li></ul></li><li class='nav-item dropdown  level_0'><a class='nav-link dropdown-toggle' href='https://dpal.karnataka.gov.in/5/rti/kn' role='button' data-bs-toggle='dropdown' data-bs-auto-close='outside'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು</a><ul class='dropdown-menu shadow sub-mnu sub-mnu-0'><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/168/%E0%B2%AE%E0%B2%BE%E0%B2%B9%E0%B2%BF%E0%B2%A4%E0%B2%BF-%E0%B2%B9%E0%B2%95%E0%B3%8D%E0%B2%95%E0%B3%81-%E0%B2%B5%E0%B2%BE%E0%B2%B0%E0%B3%8D%E0%B2%B7%E0%B2%BF%E0%B2%95-%E0%B2%B5%E0%B2%B0%E0%B2%A6%E0%B2%BF-2024-25/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು ವಾರ್ಷಿಕ ವರದಿ</a></li><li class='nav-item  level_0'><a class='nav-link' href='https://rtionline.karnataka.gov.in/index.php?lan=M'><i class=''></i> ಆನ್‌ಲೈನ್‌ ಮಾಹಿತಿ ಹಕ್ಕು</a></li><li class='nav-item  level_0'><a class='nav-link' href='https://dpal.karnataka.gov.in/6/rti-4%281%29%28a%29/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು 4(1)(ಎ)</a></li><li class='nav-item  level_0'><a class='nav-link' href='https://dpal.karnataka.gov.in/7/rti-4%281%29%28b%29/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು 4(1)(ಬಿ)</a></li><li class='nav-item  level_1'><a class='nav-link' href='https://dpal.karnataka.gov.in/8/rti-act-2005/kn'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು ಅಧಿನಿಯಮ 2005</a></li><li class='nav-item  level_0'><a class='nav-link' href='http://dpal.karnataka.gov.in/storage/pdf-files/RTI 26 (3) (b).pdf'><i class=''></i> ಮಾಹಿತಿ ಹಕ್ಕು ಅಧಿನಿಯಮ 26 (3)(ಬಿ)</a></li></ul></li></ul> 
+    </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+<script type="text/javascript">
+
+function openNav() {
+  document.getElementById("vardha").style.width = "250px";
+
+}
+
+function closeNav() {
+  document.getElementById("vardha").style.width = "0";
+
+}
+ 
+</script>
+
+
+<div class="feedback-btn">
+  <a href="https://dpal.karnataka.gov.in/feedback/kn">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+    <span>ಅಭಿಪ್ರಾಯ</span>
+  </a>
+</div>
+
+
+
+
+    <script>
+    // Function to set theme colors
+    function setTheme(color1, color2) {
+        // Set the CSS variables for --primary-color and --secondary-color
+        document.documentElement.style.setProperty('--primary-color', color1);
+        document.documentElement.style.setProperty('--secondary-color', color2);
+
+        // Save the selected colors in cookies
+        document.cookie = "theme1=" + color1 + "; path=/; max-age=15"; // 30 days expiry
+        document.cookie = "theme2=" + color2 + "; path=/; max-age=15"; 
+    }
+
+    // Function to get the value of a cookie
+    function getCookie(name) {
+        let cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.startsWith(name + '=')) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return null;
+    }
+
+    // Apply the theme colors on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme1 = getCookie('theme1');
+        const theme2 = getCookie('theme2');
+        if (theme1 && theme2) {
+            document.documentElement.style.setProperty('--primary-color', theme1);
+            document.documentElement.style.setProperty('--secondary-color', theme2);
+        }
+    });
+</script>
