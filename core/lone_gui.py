@@ -1,7 +1,9 @@
 import tkinter as tk
 from tkinter import scrolledtext
-import subprocess
 import os
+
+# Import LONE brain
+from brain import run_lone as brain_run
 
 # ==============================
 # MAIN WINDOW
@@ -25,15 +27,8 @@ def run_lone():
     output.insert(tk.END, f"\n🧠 You: {task}\n")
 
     try:
-        result = subprocess.run(
-            ["python", "/ai_system/core/brain.py"],
-            input=task,
-            text=True,
-            capture_output=True
-        )
-
-        output.insert(tk.END, f"{result.stdout}\n")
-
+        answer = brain_run(task)
+        output.insert(tk.END, f"🤖 LONE: {answer}\n\n")
     except Exception as e:
         output.insert(tk.END, f"❌ Error: {e}\n")
 
@@ -76,7 +71,7 @@ output = scrolledtext.ScrolledText(root, width=100, height=25, font=("Arial", 10
 output.pack(pady=10)
 
 # ==============================
-# RUN
+# RUN APP
 # ==============================
 
 root.mainloop()
